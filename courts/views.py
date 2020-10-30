@@ -41,7 +41,7 @@ def simple_upload(request):
     return render(request, 'core/simple_upload.html')
 
 def home(request):
-    form = EmailSignupForm()
+    form = EmailSignupForm(request.POST or None)
     if request.method == "POST":
         email = request.POST["email"]
         # check if email already exists in database, if
