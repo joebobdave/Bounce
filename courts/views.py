@@ -42,7 +42,7 @@ def simple_upload(request):
 
 def home(request):
     form = EmailSignupForm(request.POST or None)
-    if request.method == "POST":
+    if request.method == "POST" or None:
         email = request.POST["email"]
         # check if email already exists in database, if
         if form.is_valid():
